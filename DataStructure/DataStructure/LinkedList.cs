@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace DataStructure
 {
@@ -43,5 +44,22 @@ namespace DataStructure
                 temp = temp.next;
             }
         }
+        //ADD IN REVERSE ORDER
+        public void AddInReverseOrder(int data)
+        {
+            Node newNode = new Node(data);
+            if (this.head == null)
+            {
+                this.head = newNode;
+            }
+            else
+            {
+                Node temp = this.head;
+                head = newNode;
+                head.next = temp;
+            }
+            Console.WriteLine("{0} inserted into linked list", newNode.data);
+        }
+
     }
 }
